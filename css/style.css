@@ -125,7 +125,8 @@ section h3 {
 	width: 70px;
 	display: inline-block;
 }
-.doctor section input {
+.doctor section input,
+.report section input {
 	width: calc(100% - 105px);
 	border: 2px solid #999;
 	padding: 8px;
@@ -147,4 +148,13 @@ section h3 {
 	display: block;
 	padding: 5px;
 	font-size: 1rem;
+}
+
+/*=========Reports===========*/
+.report section {
+	width: 500px;
+	height: 300px;
+}
+.report section input {
+	width: auto;
 }
