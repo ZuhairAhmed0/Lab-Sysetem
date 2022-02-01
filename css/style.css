@@ -1,0 +1,150 @@
+:root {
+	--main-color: #222;
+	--main-bg-color: linear-gradient(to bottom, rgb(191, 194, 199), #e4e3e1);
+	--secondary-color: #5bc4fd;
+}
+
+html {
+	font-family: Arial, Helvetica, sans-serif;
+}
+body {
+	margin: 0;
+	padding: 0;
+	background-image: linear-gradient(to bottom, rgb(129, 138, 147), rgb(225, 217, 215));
+	background-repeat: no-repeat;
+	height: 100vh;
+}
+.d-flex {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.btn {
+	background: var(--secondary-color);
+	padding: 10px;
+	color: #fff;
+	border-radius: 6px;
+	border: none;
+}
+.container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	height: 500px;
+}
+.container section {
+	width: 300px;
+	border: 3px solid #fff;
+	border-radius: 8px;
+	margin: 10px;
+	padding: 10px;
+	background-image: var(--main-bg-color);
+}
+/*=========login===========*/
+.login {
+	width: 45%;
+	min-width: 360px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.login fieldset {
+	border: 3px solid #fff;
+	border-radius: 10px;
+	background-image: var(--main-bg-color);
+}
+
+.login fieldset legend,
+.login button {
+	text-align: center;
+	width: 144px;
+	font-size: 1.8rem;
+}
+.login button {
+	width: 250px;
+	margin: 30px auto;
+	display: block;
+	padding: 5px;
+	font-size: 1.6rem;
+}
+.logo {
+	text-align: center;
+}
+
+.login .logo i {
+	font-size: 5rem;
+	padding: 10px;
+	color: #9698a4;
+}
+.login .form-contorl {
+	background: #fff;
+	padding: 10px;
+	border-radius: 10px;
+	margin-bottom: 13px;
+}
+.login .form-contorl input {
+	border: none;
+	outline: none;
+	font-size: 1rem;
+	color: #757575;
+	border-left: 1px solid #757575;
+	padding-left: 6px;
+}
+.login .form-contorl i {
+	color: #757575;
+}
+.login .remember {
+	font-size: 1rem;
+	margin: 10px 0;
+	color: var(--main-color);
+}
+
+/*=========admin===========*/
+.admin .add__new {
+	border-bottom: 2px solid var(--main-color);
+	margin-bottom: 10px;
+}
+
+section h3 {
+	color: var(--main-color);
+}
+
+/*=========admin===========*/
+.doctor .container {
+	justify-content: flex-start;
+}
+.doctor section {
+	width: 500px;
+}
+.doctor section label {
+	font-weight: bold;
+	color: var(--main-color);
+	width: 70px;
+	display: inline-block;
+}
+.doctor section input {
+	width: calc(100% - 105px);
+	border: 2px solid #999;
+	padding: 8px;
+	border-radius: 8px;
+	outline: none;
+	transition: 1s;
+}
+.doctor section input:focus {
+	border-color: var(--secondary-color);
+}
+.doctor section form div {
+	margin: 10px;
+	width: 75%;
+}
+
+.doctor section .save {
+	width: 130px;
+	margin: 30px auto;
+	display: block;
+	padding: 5px;
+	font-size: 1rem;
+}
