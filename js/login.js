@@ -2,6 +2,8 @@ const username = document.querySelector('#username');
 const password = document.querySelector('#password');
 const form = document.querySelector('form');
 
+export let authorization =
+	'eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6ImFkbWluIiwicGhvbmUiOiIwOTY3NjQ1NjIwIiwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTY0NDI1NjMwOH0.MuHqstLdZEHHcTj__4tTa26E5badVGzhlb0GWzMIrI67udl5UMUd_EIfRMMQJCHGUpJcEqtbFo0Y1S6V9uc3IA';
 form.addEventListener('submit', (event) => {
 	event.preventDefault();
 	const userData = {username: username.value, password: password.value};
@@ -21,27 +23,9 @@ form.addEventListener('submit', (event) => {
 		})
 		.then((data) => {
 			if (data) {
-				location.href = 'admin.html';
-				username.value = '';
-				password.value = '';
+				authorization = data;
+				location.replace('admin.html');
 			}
 		});
 });
 
-/*
-fetch('https://lab01.deno.dev/api/users', {
-	method: 'get',
-	headers: {
-		'Content-Type': 'application/json',
-      'Authorization': 'eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6ImFkbWluIiwicGhvbmUiOiIwOTY3NjQ1NjIwIiwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTY0MzgwNzcxNH0.jB1LKBAO4mGbT2UUY4qUFSeG4hx2Tpl218fKd4IqclXV1HBx7zKC7xfFXnVuULenk9W-nfy0suMgLvn18npV-A'
-	},
-}).then((response) => {
-	if (response.status == 200) {
-		return response.json()
-	} else {
-		return response.status
-	}
-}).then((data) => {
-   console.log(data);
-});
-*/

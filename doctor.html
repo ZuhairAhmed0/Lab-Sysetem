@@ -10,30 +10,32 @@
 	<body>
 		<div class="doctor container">
 			<section>
-            <div class="d-flex">
-               <h3>New patient</h3>
-               <button class="btn">Find patient</button>
-            </div>
-            <form action="">
-               <div>
-                  <label for="">Name</label>
-                  <input type="text">
-               </div>
-               <div>
-                  <label for="">Age</label>
-                  <input type="number">
-               </div>
-               <div>
-                  <label for="">Phone</label>
-                  <input type="number">
-               </div>
-               <div>
-                  <label>Address</label>
-                  <input type="text">
-               </div>
-               <button class="btn save" type="submit">Save</button>
-            </form>
-         </section>
+				<div class="d-flex">
+					<h3>New patient</h3>
+					<button class="btn">Find patient</button>
+				</div>
+				<form action="" class="add-new__patient">
+					<div>
+						<label for="">Name</label>
+						<input type="text" required name="name" id="name" />
+					</div>
+					<div>
+						<label for="">age</label>
+						<input type="number" required name="age" id="age" />
+					</div>
+					<div>
+						<label for="">Phone</label>
+						<input type="tel" name="phone" title="Please enter exactly 10 digits" maxlength="10" id="phone" pattern="[0-9]{1}[0-9]{9}" />
+						<!-- <input type="tel" required name="phone" id="phone" maxlength="10" > -->
+					</div>
+					<div>
+						<label>Address</label>
+						<input type="text" required name="address" id="address" />
+					</div>
+					<button class="btn save" type="submit">Save</button>
+				</form>
+			</section>
 		</div>
+		<script src="js/doctor.js" type="module"></script>
 	</body>
 </html>

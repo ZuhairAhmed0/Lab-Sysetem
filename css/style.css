@@ -6,12 +6,13 @@
 
 html {
 	font-family: Arial, Helvetica, sans-serif;
+	background-image: linear-gradient(to bottom, rgb(129, 138, 147), rgb(225, 217, 215));
+	background-repeat: no-repeat;
 }
 body {
 	margin: 0;
 	padding: 0;
-	background-image: linear-gradient(to bottom, rgb(129, 138, 147), rgb(225, 217, 215));
-	background-repeat: no-repeat;
+
 	height: 100vh;
 }
 .d-flex {
@@ -26,14 +27,16 @@ body {
 	border-radius: 6px;
 	border: none;
 }
-.container {
+.container,
+.container__addded {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
 	height: 500px;
 }
-.container section {
+.container section,
+.container__addded section {
 	width: 300px;
 	border: 3px solid #fff;
 	border-radius: 8px;
@@ -108,6 +111,14 @@ body {
 	margin-bottom: 10px;
 }
 
+.admin.container__addded section {
+	height: auto;
+	position: absolute;
+	left: 50%;
+	top: 23%;
+	transform: translate(-50%, 0);
+}
+
 section h3 {
 	color: var(--main-color);
 }
@@ -119,20 +130,25 @@ section h3 {
 .doctor section {
 	width: 500px;
 }
-.doctor section label {
+.doctor section label,
+.tests section label,
+.admin section label {
 	font-weight: bold;
 	color: var(--main-color);
-	width: 70px;
+	width: 75px;
 	display: inline-block;
 }
 .doctor section input,
-.report section input {
-	width: calc(100% - 105px);
+.report section input,
+.tests section input,
+.admin section input,
+.tests #test_id {
+	width: calc(100% - 110px);
 	border: 2px solid #999;
 	padding: 8px;
 	border-radius: 8px;
 	outline: none;
-	transition: 1s;
+	margin-bottom: 10px;
 }
 .doctor section input:focus {
 	border-color: var(--secondary-color);
@@ -142,14 +158,21 @@ section h3 {
 	width: 75%;
 }
 
-.doctor section .save {
+section .save,
+.cancel {
 	width: 130px;
-	margin: 30px auto;
+	margin: 10px auto;
 	display: block;
 	padding: 5px;
 	font-size: 1rem;
 }
-
+.cancel {
+	position: relative;
+	left: 107px;
+	bottom: 37px;
+	width: auto;
+	background: red;
+}
 /*=========Reports===========*/
 .report section {
 	width: 500px;
@@ -157,4 +180,19 @@ section h3 {
 }
 .report section input {
 	width: auto;
+}
+/* =============Tests============ */
+.tests section {
+	width: 500px;
+}
+.tests section input {
+	width: calc(100% - 130px);
+}
+.tests section label {
+	width: 100px;
+}
+
+.container-visibil {
+	visibility: hidden;
+	/* transition: 1s; */
 }
