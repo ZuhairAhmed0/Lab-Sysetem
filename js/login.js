@@ -1,9 +1,10 @@
+import cookie from "/node_modules/cookie_js/src/cookie.js";
+
 const username = document.querySelector('#username');
 const password = document.querySelector('#password');
 const form = document.querySelector('form');
 
-export let authorization =
-	'eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6ImFkbWluIiwicGhvbmUiOiIwOTY3NjQ1NjIwIiwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTY0NDI1NjMwOH0.MuHqstLdZEHHcTj__4tTa26E5badVGzhlb0GWzMIrI67udl5UMUd_EIfRMMQJCHGUpJcEqtbFo0Y1S6V9uc3IA';
+
 form.addEventListener('submit', (event) => {
 	event.preventDefault();
 	const userData = {username: username.value, password: password.value};
@@ -18,13 +19,17 @@ form.addEventListener('submit', (event) => {
 			if (response.status == 200) {
 				return response.text();
 			} else {
-				console.log('Status Code: ' + response.status);
+				return response.text();
 			}
 		})
 		.then((data) => {
 			if (data) {
-				authorization = data;
-				location.replace('admin.html');
+				cookie.set('authorization', data, {
+					expires: 1, // expires in one day
+					secure: true 
+				});
+				location.href = 'admin.html';
+				document.querySelectorAll(`form input`).forEach((input) => (input.value = ''));
 			}
 		});
 });

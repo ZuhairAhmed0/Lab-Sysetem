@@ -1,5 +1,4 @@
-import {authorization} from './login.js';
-
+import cookie from "/node_modules/cookie_js/src/cookie.js";
 class GetData {
 	constructor(url) {
 		this.url = url;
@@ -9,7 +8,7 @@ class GetData {
 			method: 'get',
 			headers: {
 				'Content-Type': 'application/json',
-				Authorization: authorization,
+				Authorization: cookie.get('authorization'),
 			},
 		})
 			.then((response) => {
@@ -25,3 +24,4 @@ class GetData {
 	}
 }
 export default GetData;
+

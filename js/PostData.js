@@ -1,5 +1,4 @@
-import {authorization} from './login.js';
-
+import cookie from "/node_modules/cookie_js/src/cookie.js";
 class PostData {
    constructor (data = {}, url = '') {
       this.data = data;
@@ -10,7 +9,7 @@ class PostData {
          method: 'POST',
          headers: {
             'Content-type': 'application/json',
-            Authorization: authorization,
+            Authorization: cookie.get('authorization'),
          },
          body: JSON.stringify(this.data),
       })
