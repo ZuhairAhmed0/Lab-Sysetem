@@ -28,7 +28,8 @@ form.addEventListener('submit', (event) => {
 					expires: 1, // expires in one day
 					secure: true 
 				});
-				location.href = 'https://zuhairahmed0.github.io/Lab-Sysetem/admin.html';
+				window.location.hash = 'admin.html';
+				// wilocation.href = 'admin.html';
 				document.querySelectorAll(`form input`).forEach((input) => (input.value = ''));
 			}
 		});
