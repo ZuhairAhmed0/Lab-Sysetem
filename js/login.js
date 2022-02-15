@@ -1,4 +1,3 @@
-import cookie from "/node_modules/cookie_js/src/cookie.js";
 
 const username = document.querySelector('#username');
 const password = document.querySelector('#password');
@@ -17,21 +16,18 @@ form.addEventListener('submit', (event) => {
 	})
 		.then((response) => {
 			if (response.status == 200) {
-				return response.text();
+				return response.json();
 			} else {
 				return response.text();
 			}
 		})
 		.then((data) => {
 			if (data) {
-				cookie.set('authorization', data, {
-					expires: 1, // expires in one day
-					secure: true 
-				});
-				window.location.hash = 'admin.html';
-				// wilocation.href = 'admin.html';
+				localStorage.setItem('token', data.token)
+				location.href = 'admin.html';
 				document.querySelectorAll(`form input`).forEach((input) => (input.value = ''));
 			}
 		});
 });
+
 

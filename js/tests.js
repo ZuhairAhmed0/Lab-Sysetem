@@ -13,7 +13,7 @@ testPatient.addEventListener('submit', (event) => {
 	postData.fetchData();
 });
 
-// const getData = new GetData('tests');
-// getData.fetchData();
+const getData = new GetData('tests');
+getData.fetchData();
 
 

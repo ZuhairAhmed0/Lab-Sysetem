@@ -14,7 +14,7 @@
 					<h3>New patient</h3>
 					<button class="btn">Find patient</button>
 				</div>
-				<form action="" class="add-new__patient">
+				<form action="" class="add-new__patient" autocomplete="off">
 					<div>
 						<label for="">Name</label>
 						<input type="text" required name="name" id="name" />
@@ -26,7 +26,6 @@
 					<div>
 						<label for="">Phone</label>
 						<input type="tel" name="phone" title="Please enter exactly 10 digits" maxlength="10" id="phone" pattern="[0-9]{1}[0-9]{9}" />
-						<!-- <input type="tel" required name="phone" id="phone" maxlength="10" > -->
 					</div>
 					<div>
 						<label>Address</label>
@@ -36,7 +35,6 @@
 				</form>
 			</section>
 		</div>
-
 		
 		<script src="js/doctor.js" type="module"></script>
 	</body>

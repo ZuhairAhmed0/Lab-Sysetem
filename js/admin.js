@@ -1,6 +1,5 @@
 import PostData from './PostData.js';
 import GetData from './GetData.js';
-import cookie from "/node_modules/cookie_js/src/cookie.js";
 
 const $name = document.querySelector('#name');
 const phone = document.querySelector('#phone');
@@ -24,7 +23,12 @@ saveNewData[1].addEventListener('submit', (event) => {
 	};
 	const postData = new PostData(data, 'users');
 	postData.fetchData();
+
 });
+const getData1 = new GetData('users');
+getData1.fetchData();
+
+
 saveNewData[0].addEventListener('submit', (event) => {
 	event.preventDefault();
 	const data = {
@@ -32,9 +36,10 @@ saveNewData[0].addEventListener('submit', (event) => {
 	};
 	const postData = new PostData(data, 'roles');
 	postData.fetchData();
+	
 });
-// const getData = new GetData('roles');
-// getData.fetchData();
+const getData2 = new GetData('roles');
+getData2.fetchData();
 
 addNew.forEach((btn, i) => {
 	btn.addEventListener('click', (e) => {
@@ -54,7 +59,7 @@ fetch('https://lab01.deno.dev/api/users', {
 	method: 'get',
 	headers: {
 		'Content-Type': 'application/json',
-		Authorization:  cookie.get('authorization')
+		Authorization:  localStorage.getItem('token')
 	}
 })
 	.then((response) => {

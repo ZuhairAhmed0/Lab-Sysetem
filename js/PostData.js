@@ -1,4 +1,3 @@
-import cookie from "/node_modules/cookie_js/src/cookie.js";
 class PostData {
    constructor (data = {}, url = '') {
       this.data = data;
@@ -9,7 +8,7 @@ class PostData {
          method: 'POST',
          headers: {
             'Content-type': 'application/json',
-            Authorization: cookie.get('authorization'),
+            Authorization: localStorage.getItem('token'),
          },
          body: JSON.stringify(this.data),
       })

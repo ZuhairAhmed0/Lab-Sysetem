@@ -1,6 +1,5 @@
 import PostData from './PostData.js';
 import GetData from './GetData.js';
-import cookie from "/node_modules/cookie_js/src/cookie.js";
 
 const username = document.querySelector('#name');
 const testId = document.querySelector('#test_id');
@@ -23,17 +22,16 @@ testChildrenPatient.addEventListener('submit', (event) => {
 	};
 	const postData = new PostData(data, 'children');
 	postData.fetchData();
-	console.log(data);
 });
 
-// const getData = new GetData('children');
-// getData.fetchData();
+const getData = new GetData('children');
+getData.fetchData();
 
 fetch('https://lab01.deno.dev/api/tests', {
 	method: 'get',
 	headers: {
 		'Content-Type': 'application/json',
-		Authorization: cookie.get('authorization'),
+		Authorization: localStorage.getItem('token'),
 	},
 })
 	.then((response) => {

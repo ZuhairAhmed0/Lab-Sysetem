@@ -1,4 +1,3 @@
-import cookie from "/node_modules/cookie_js/src/cookie.js";
 class GetData {
 	constructor(url) {
 		this.url = url;
@@ -8,7 +7,7 @@ class GetData {
 			method: 'get',
 			headers: {
 				'Content-Type': 'application/json',
-				Authorization: cookie.get('authorization'),
+				Authorization: localStorage.getItem('token'),
 			},
 		})
 			.then((response) => {
