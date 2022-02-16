@@ -126,6 +126,38 @@ section h3 {
 	color: var(--main-color);
 }
 
+nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 10px;
+	border-bottom: 2px solid #ddd;
+	width: 80%;
+	margin: 0 auto;
+	padding: 10px 0;
+}
+
+nav ul {
+	list-style: none;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	width: calc(100% - 140px);
+	gap: 7%;
+	padding: 0;
+}
+
+nav ul li a {
+	text-decoration: none;
+	font-weight: bold;
+	color: var(--secondary-color);
+	font-size: 1rem;
+}
+.signout {
+	background-color: red;
+	font-size: .9rem;
+}
+
 /*=========admin===========*/
 .doctor .container {
 	justify-content: flex-start;
