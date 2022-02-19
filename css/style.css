@@ -13,7 +13,7 @@ body {
 	margin: 0;
 	padding: 0;
 
-	height: 100vh;
+	/* height: 100vh; */
 }
 .d-flex {
 	display: flex;
@@ -34,6 +34,7 @@ body {
 	justify-content: center;
 	align-items: center;
 	height: 500px;
+	height: 100vh;
 }
 .container section,
 .container__addded section {
@@ -161,9 +162,11 @@ nav ul li a {
 /*=========admin===========*/
 .doctor .container {
 	justify-content: flex-start;
+	
 }
 .doctor section {
 	width: 500px;
+	margin-top: -60px;
 }
 .doctor section label,
 .tests section label,
@@ -212,6 +215,7 @@ section .save,
 .report section {
 	width: 500px;
 	height: 300px;
+	margin-top: -60px;
 }
 .report section input {
 	width: auto;
@@ -219,6 +223,7 @@ section .save,
 /* =============Tests============ */
 .tests section {
 	width: 500px;
+	margin-top: -60px;
 }
 .tests section input {
 	width: calc(100% - 130px);

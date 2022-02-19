@@ -22,8 +22,8 @@ form.addEventListener('submit', (event) => {
 			}
 		})
 		.then((data) => {
-			if (data) {
-				localStorage.setItem('token', data.token)
+			if (data.token) {
+				localStorage.setItem('token', data.token);
 				location.href = 'admin.html';
 				document.querySelectorAll(`form input`).forEach((input) => (input.value = ''));
 			}
